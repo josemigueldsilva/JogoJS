@@ -1,0 +1,192 @@
+.area_jogo {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: url("../img/arena.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.tela_intermediaria {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: url("../img/tela.jpg");
+    background-size: 100% 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: 9998;
+}
+
+.tela_inicial {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: url("../img/tela_inicial.jpg");
+    background-size: 100% 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: 9999;
+}
+
+#gameover {
+    position: fixed;
+    width: 500px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 4px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#gameover2 {
+    position: fixed;
+    width: 500px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 4px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+
+#start {
+    position: fixed;
+    width: 800px;
+    height: 100px;
+    text-align: center;
+    top: 900px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#contador {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    font-family: Ufo;
+    z-index: 2;
+    text-shadow: 2px 2px 5px black;
+}
+
+/* --------------------- PLAYER --------------------- */
+.player {
+    width: 92.5px;
+    height: 84px;
+    top: 800px;
+    left: 100px;
+    background-image: url("../img/jogador_andando.png");
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+@keyframes playerMove {
+    from { background-position: 0px 0; }
+    to { background-position: -770px; } /* 92.5px * 8 frames */
+}
+
+.movendo {
+    animation: playerMove 0.5s steps(8) infinite;
+    background-image: url("../img/jogador_andando.png");
+}
+
+@keyframes playerAttack {
+    from { background-position: 0px 0; }
+    to { background-position: -576px; } /* 96px * 6 frames */
+}
+
+.atacando {
+    width: 96px;
+    height: 84px;
+    animation: playerAttack 0.5s steps(6) 1;
+    background-image: url("../img/jogador_ataque.png");
+    background-repeat: no-repeat;
+}
+
+@keyframes playerDeath {
+    from { background-position: 0; }
+    to { background-position: -1152px; } /* Ajuste conforme o número de frames */
+}
+
+.morrendo {
+    width: 96px;
+    height: 84px;
+    animation: playerDeath 4s steps(12) 1;
+    background-image: url("../img/jogador_morte.png");
+}
+
+/* --------------------- INIMIGO --------------------- */
+.inimigo {
+    width: 92.5px;
+    height: 84px;
+    position: absolute;
+    top: 800px; /* posição inicial mais próxima do chão */
+    left: 1300px;
+    background-image: url('../img/inimigo_andando.png');
+    background-repeat: no-repeat;
+}
+
+.inimigo.andando {
+    animation: animar-inimigo-andando 0.5s steps(8) infinite;
+    background-image: url('../img/inimigo_andando.png');
+}
+
+.inimigo.atacando {
+    width: 96px;
+    height: 84px;
+    animation: animar-inimigo-atacando 0.5s steps(6) infinite;
+    background-image: url('../img/inimigo_atacando.png');
+    background-repeat: no-repeat;
+}
+
+.inimigo-morrendo {
+    width: 88px;
+    height: 84px;
+    animation: enemyDeath 5s steps(6) infinite;
+    background-image: url("../img/inimigo_morte.png");
+}
+
+@keyframes animar-inimigo-andando {
+    from { background-position: 0; }
+    to { background-position: -768px; }
+}
+
+@keyframes animar-inimigo-atacando {
+    from { background-position: 0; }
+    to { background-position: -576px; }
+}
+
+@keyframes enemyDeath {
+    from { background-position: 0; }
+    to { background-position: -582px; }
+}
+
+
+
+

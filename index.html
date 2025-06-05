@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Gladiador: O Último Desafio</title>
+    <link href="css/estilos.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Tela Inicial (pode ter um fundo bonito ou animação depois) -->
+    <div id="tela_inicial" class="tela_inicial"></div>
+
+    <!-- Tela Intermediária com botão Start -->
+    <div id="tela_intermediaria" class="tela_intermediaria">
+        <div id="start" onclick="start()">
+        </div>
+    </div>
+
+    <!-- Tela de Game Over (REINICIAR) -->
+    <div id="gameover" style="display: none;" onclick="reiniciar()">
+        <p>Morreu!!!!</p>
+        <h2>Clique aqui para Reiniciar</h2>
+    </div>
+
+	<div id="gameover2" style="display: none;" onclick="reiniciar()">
+        <p>Ganhou!!!!</p>
+        <h2>Clique aqui para Reiniciar</h2>
+    </div>
+
+    <!-- Fundo com área do jogo -->
+    <div id="fundo">
+        <div id="area_jogo" class="area_jogo"></div>
+    </div>
+
+    <!-- Contador do cronômetro inicial -->
+    <div id="contador" style="display: none;">3</div>
+
+    <!-- Sons -->
+    <audio id="musicaInicio" src="sons/Musica_inicial.mp3" preload="auto"></audio>
+    <audio id="musicaFundo" src="sons/Musica.mp3" preload="auto"></audio>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-collision.min.js"></script>
+    <script type="text/javascript" src="js/jogo.js"></script> 
+    <script src="scripts.js"></script>
+</body>
+</html>
